@@ -13,6 +13,7 @@ header {
   text-align: center;
   font-family: "shrikhand", "cursive";
   box-shadow: 0px 3px 5px lightgray;
+  position: relative;
 }
 header h1 {
   margin: 0;
@@ -21,6 +22,8 @@ header h1 {
 main {
   background-color: #f3f3f3;
   text-align: center;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 main .city {
   display: flex;
@@ -33,13 +36,91 @@ main .city i {
   font-size: 1.2rem;
 }
 main button {
-  padding: 1rem 2.3rem;
+  padding: 1rem 1.8rem;
   border-radius: 2rem;
   font-weight: bold;
   font-size: 1rem;
   background-image: linear-gradient(violet, #9356dc);
   border: none;
   color: white;
+  margin-top: 1rem;
+}
+
+.fonctionnement h2 {
+  margin-left: 1.5rem;
+}
+.fonctionnement .conception {
+  counter-reset: conception;
+  margin-bottom: 5rem;
+  margin-left: 1.5rem;
+}
+@media (min-width: 825px) {
+  .fonctionnement .conception {
+    display: flex;
+    flex-direction: row;
+  }
+  .fonctionnement .conception > * {
+    flex-grow: 1;
+  }
+}
+.fonctionnement .conception > * {
+  background-color: #f3f3f3;
+  box-shadow: 0px 3px 10px lightgray;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  position: relative;
+}
+.fonctionnement .conception > *::before {
+  content: counter(conception);
+  counter-increment: conception;
+  padding: 0.1rem 0.4rem;
+  background-color: #9356dc;
+  border-radius: 50%;
+  margin-left: -2.2rem;
+  margin-right: 1rem;
+  color: white;
+  font-weight: lighter;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fonctionnement .conception i {
+  color: #9356dc;
+  margin-right: 1rem;
+}
+
+.restaurants {
+  margin-bottom: 20rem;
+  background-color: rgba(229, 229, 229, 0.9);
+}
+.restaurants h2 {
+  margin-left: 1.5rem;
+}
+.restaurants__card {
+  height: 18rem;
+  margin: 0 1rem 2rem 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 16px #0000002e;
+}
+.restaurants__card .card__description {
+  border: red 10px solid;
+  display: flex;
+}
+.restaurants__card img {
+  width: 100%;
+  height: 75%;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+.restaurants__card p {
+  margin: 0 0 0 1rem;
+}
+.restaurants__card i {
+  margin-left: 90%;
 }
 
 /*# sourceMappingURL=style.css.map */

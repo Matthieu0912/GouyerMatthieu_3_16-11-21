@@ -4,6 +4,32 @@
 * {
   box-sizing: border-box;
 }
+@mixin preparation_box {
+  background-color: #f3f3f3;
+  box-shadow: 0px 3px 10px lightgray;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  position: relative;
+  &::before {
+    content: counter(conception);
+    counter-increment: conception;
+    @include number;
+  }
+}
+@mixin number {
+  padding: 0.1rem 0.4rem;
+  background-color: #9356dc;
+  border-radius: 50%;
+  margin-left: -2.2rem;
+  margin-right: 1rem;
+  color: white;
+  font-weight: lighter;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 body {
   margin: 0px;
   font-family: "roboto", "sans-serif";
@@ -12,6 +38,7 @@ header {
   text-align: center;
   font-family: "shrikhand", "cursive";
   box-shadow: 0px 3px 5px lightgray;
+  position: relative;
   h1 {
     margin: 0;
   }
@@ -19,6 +46,8 @@ header {
 main {
   background-color: #f3f3f3;
   text-align: center;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
   .city {
     display: flex;
     align-items: center;
@@ -30,12 +59,68 @@ main {
     }
   }
   button {
-    padding: 1rem 2.3rem;
+    padding: 1rem 1.8rem;
     border-radius: 2rem;
     font-weight: bold;
     font-size: 1rem;
     background-image: linear-gradient(violet, #9356dc);
     border: none;
     color: white;
+    margin-top: 1rem;
+  }
+}
+.fonctionnement {
+  h2 {
+    margin-left: 1.5rem;
+  }
+  .conception {
+    counter-reset: conception;
+    margin-bottom: 5rem;
+    margin-left: 1.5rem;
+    @media (min-width: 825px) {
+      display: flex;
+      flex-direction: row;
+      & > * {
+        flex-grow: 1;
+      }
+    }
+    & > * {
+      @include preparation_box;
+    }
+    & i {
+      color: #9356dc;
+      margin-right: 1rem;
+    }
+  }
+}
+.restaurants {
+  margin-bottom: 20rem;
+  background-color: rgba(229, 229, 229, 0.9);
+  h2 {
+    margin-left: 1.5rem;
+  }
+  &__card {
+    height: 18rem;
+    margin: 0 1rem 2rem 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 16px #0000002e;
+    .card__description {
+      border: red 10px solid;
+      display: flex;
+    }
+    & img {
+      width: 100%;
+      height: 75%;
+      border-radius: 1rem 1rem 0 0;
+      object-fit: cover;
+      object-position: center;
+    }
+    & p {
+      margin: 0 0 0 1rem;
+    }
+    & i {
+      margin-left: 90%;
+    }
   }
 }
