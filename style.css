@@ -51,7 +51,7 @@ main button {
 }
 .fonctionnement .conception {
   counter-reset: conception;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   margin-left: 1.5rem;
 }
 @media (min-width: 825px) {
@@ -92,22 +92,40 @@ main button {
 }
 
 .restaurants {
-  margin-bottom: 20rem;
-  background-color: rgba(229, 229, 229, 0.9);
+  padding: 1.5rem 0 2rem 0;
+  background-color: #f6f6f6;
 }
 .restaurants h2 {
   margin-left: 1.5rem;
 }
+.restaurants a {
+  text-decoration: none;
+  color: inherit;
+}
 .restaurants__card {
   height: 18rem;
-  margin: 0 1rem 2rem 1rem;
+  margin: 0 1rem 1.5rem 1rem;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0 16px #0000002e;
 }
+.restaurants__card.new {
+  position: relative;
+}
+.restaurants__card.new::before {
+  content: "Nouveau";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #1b6150;
+  background-color: #99e2d0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+}
 .restaurants__card .card__description {
-  border: red 10px solid;
   display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
 }
 .restaurants__card img {
   width: 100%;
@@ -120,7 +138,19 @@ main button {
   margin: 0 0 0 1rem;
 }
 .restaurants__card i {
-  margin-left: 90%;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  margin-right: 1rem;
+}
+
+footer {
+  background-color: #2f2f2f;
+  padding: 0.5rem 1.2rem;
+  color: white;
+}
+footer .footer__title {
+  font-family: "shrikhand", "cursive";
+  font-weight: 200;
 }
 
 /*# sourceMappingURL=style.css.map */
